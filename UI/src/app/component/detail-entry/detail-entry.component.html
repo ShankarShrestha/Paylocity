@@ -1,0 +1,70 @@
+<h2>Paylocity Benefit calculator</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <section formGroupName="Employees">
+        <div class="form-control">
+            <label for="Name">Employee Name</label>
+            <input type="text" 
+                formControlName = "Name" 
+                class="form-control" 
+                id="Name" 
+                placeholder="Employee Name">
+        </div>
+       
+        <div class="form-control">
+            <label for="yearlySalary">Employee Salary</label>
+            <input type="text" 
+                formControlName = "yearlySalary" 
+                class="form-control" 
+                id="yearlySalary" 
+                placeholder="Employee Salary">
+        </div>
+    </section>
+   
+
+    <section formArrayName="Dependents">
+        <div>            
+            <input type="button" (click)="addDependent()" class="btn btn-block" value="Add Dependents" />
+        </div>
+
+        <div  *ngFor="let dep of Dependents.controls; let i=index" [formGroupName]="i">
+            <div class="form-control" >
+                <label for="Name">Dependent Name</label>
+                <input type="text" 
+                    formControlName = "Name" 
+                    class="form-control" 
+                    id="Name" 
+                    placeholder="Dependent Name">
+            </div>
+    
+            <div class="form-control" >
+                <label for="Type">Relationship</label>
+                <select  formControlName="Type" name="Type" id="Type" class="form-control">
+                    <option value="" disabled>Choose Dependent</option>
+                    <option *ngFor="let dep of dependentType"   [ngValue]="dep">{{dep}}</option>
+                </select>
+            </div>
+            <div class="form-control"><button class="btn btn-Remove" (click)="onRemoveDependent(i)">Remove dependent</button></div>
+        </div>
+
+    </section>
+    <div class="btnDiv">
+        <button class="btn btn-half" type="submit">Calculate</button>
+        <input type="button" class="btn btn-half" (click)="clearField()" value="Clear" />
+    </div>
+    
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

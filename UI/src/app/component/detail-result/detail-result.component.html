@@ -1,0 +1,52 @@
+<h2>Paylocity Benefit Deduction result</h2>
+
+<table class="table">
+    <tr>
+        <th>Deduction Type</th>
+        <th>Amount</th>
+    </tr>
+    <tr>
+        <td>Employee Deduction</td>
+        <td>{{CalculatedDeductions[0][0].EmployeeDeduction}}</td>
+    </tr>
+    <tr>
+        <td>Dependent Deduction</td>
+        <td>{{CalculatedDeductions[0][0].DependentDeduction}}</td>
+    </tr>
+    <tr>
+        <td>Total Deduction per Pay Check</td>
+        <td>{{CalculatedDeductions[0][0].DeductionTotalPerPayCheck}}</td>
+    </tr>
+    <tr>
+        <td>Total Deduction per year(Employee)</td>
+        <td>{{CalculatedDeductions[0][0].EmployeeDeductionPerYear}}</td>
+    </tr>
+    <tr>
+        <td>Total Deduction per year(Dependent)</td>
+        <td>{{CalculatedDeductions[0][0].DependentDeuctionPerYear}}</td>
+    </tr>
+    <tr>
+        <td>Total Deduction per year</td>
+        <td>{{CalculatedDeductions[0][0].DeductionTotalPerYear}}</td>
+    </tr>
+</table>
+
+<table class="table">
+    <tr>
+        <th>Total Take Home</th>
+        <th>Amount</th>
+    </tr>
+    <tr>
+        <td>Total pay check per month</td>
+        <td>{{CalculatedDeductions[0][0].TotalPayPerCheck}}</td>
+    </tr>
+    <tr>
+        <td>Total pay check per Year</td>
+        <td>{{CalculatedDeductions[0][0].TotalPayPerYear}}</td>
+    </tr>
+
+</table>
+
+<a routerLink="/">Calculate</a>
+
+
